@@ -1,0 +1,7 @@
+com\shortenMyUrl\shortenUrl\api\controller\controller.class
+com\shortenMyUrl\shortenUrl\api\dao\UrlRespository.class
+com\shortenMyUrl\shortenUrl\api\model\response.class
+com\shortenMyUrl\shortenUrl\api\model\urlModel.class
+com\shortenMyUrl\shortenUrl\ShortenUrlApplication.class
+com\shortenMyUrl\shortenUrl\api\exception\shortenerException.class
+com\shortenMyUrl\shortenUrl\api\createShortUrl.class
