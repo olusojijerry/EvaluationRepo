@@ -32,11 +32,11 @@ public class UrlRespository {
         jedis.hset(urlKey, key, longUrl);
     }
 
-    public String getUrl(Long id) throws Exception {
-        String url = jedis.hget(urlKey, "url:"+id);
+    public String getUrl(String id) throws Exception {
+        String url = jedis.hget(urlKey, id);
         if (url == null) {
             throw new Exception("URL at key" + id + " does not exist");
         }
-        return jedis.hget(urlKey, "url:"+id);
+        return jedis.hget(urlKey, id);
     }
 }

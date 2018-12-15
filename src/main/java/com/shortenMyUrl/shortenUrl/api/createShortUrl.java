@@ -18,17 +18,17 @@ public class createShortUrl {
         this.urlRespository = urlRespository;
     }
 
-    public String shortenURL(String localURL, String longUrl) {
+    public String shortenURL(String longUrl) {
 
         Long id = urlRespository.incrementID();
         String uniqueID = Hashing.murmur3_32().hashString(longUrl, StandardCharsets.UTF_8).toString();
-        //urlRespository.saveUrl("url:"+id, longUrl);
-        String baseString = formatLocalURLFromShortener(localURL);
-        String shortenedURL = baseString + uniqueID;
+        urlRespository.saveUrl("url:"+id, longUrl);
+        //String baseString = formatLocalURLFromShortener(localURL);
+        String shortenedURL = uniqueID;
         return shortenedURL;
     }
 
-    public String getLongURLFromID(Long uniqueID) throws Exception {
+    public String getLongURLFromID(String uniqueID) throws Exception {
         String longUrl = urlRespository.getUrl(uniqueID);
 
         return longUrl;
